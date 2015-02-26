@@ -14,9 +14,9 @@ if [ "$DEBUGGER" = true ]; then
   # start app (with debugging)
   echo "Starting app with debugging"
   if [ "$DEBUG_BRK" = false ]; then
-    nodemon -V --web-host 0.0.0.0 --debug-brk false --exec node-debug index.js
+    nodemon -V --web-host 0.0.0.0 --debug-port <%= debuggerPort %> --web-port <%= debugUIPort %> --debug-brk false --exec node-debug index.js
   else
-    nodemon -V --web-host 0.0.0.0 --exec node-debug index.js
+    nodemon -V --web-host 0.0.0.0 --debug-port <%= debuggerPort %> --web-port <%= debugUIPort %> --exec node-debug index.js
   fi
 else
   # start app (no debugging)

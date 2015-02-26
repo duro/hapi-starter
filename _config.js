@@ -11,18 +11,18 @@ var config = {
   pkg: require('./package.json'),
 
   server : {
-    port : '8000',
+    port : '<%= appPort %>',
     host : '0.0.0.0'
   },
 
   api: {
-    basepath: 'http://docker.local:8000',
-    title: 'VT-API',
-    description: 'The official API for the VT platform.'
+    basepath: 'http://docker.local:<%= appPort %>',
+    title: '<%= _.slugify(appname) %>',
+    description: '<%= appDescription %>'
   },
 
   security: {
-    jwtSecret: '=yh$LqTBHwff*wRTxhQ{XJX4/v{9'
+    jwtSecret: 'please-replace-this-with-a-secret'
   },
 
   logging : {
@@ -35,7 +35,25 @@ var config = {
       reporter: require('good-console'),
       args:[{ log: '*', response: '*' }]
     }]
-  }
+  },
+
+  <% if useMongo -%>
+  database: {
+    mongodb: {
+      database: {
+        $filter: 'env',
+        test: '<%= _.slugify(appname) %>-test',
+        $default: '<%= _.slugify(appname) %>'
+      },
+      hosts: [
+        {
+          host: process.env.MONGODB_PORT_27017_TCP_ADDR,
+          port: process.env.MONGODB_PORT_27017_TCP_PORT,
+        }
+      ]
+    }
+  },
+  <% endif -%>
 
 }
 
