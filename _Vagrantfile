@@ -1,5 +1,6 @@
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
 ENV["DOCKER_HOST_VAGRANT_FILE"] ||= "./docker/Dockerhost"
+ENV["DOCKER_HOST_VAGRANT_NAME"] ||= "<%= _.slugify(appName) %>-docker-host"
 
 # BUILD ALL WITH: vagrant up --no-parallel
 
@@ -8,7 +9,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "mongodb" do |v|
 
     v.vm.provider "docker" do |d|
-      d.vagrant_machine = "zg-docker-host"
+      d.vagrant_machine = ENV["DOCKER_HOST_VAGRANT_NAME"]
       d.vagrant_vagrantfile = ENV["DOCKER_HOST_VAGRANT_FILE"]
       d.image = "mongo:<%= mongoVersion %>"
       d.name = "<%= _.slugify(appName) %>_mongodb"
@@ -22,7 +23,7 @@ Vagrant.configure("2") do |config|
       rsync__exclude: get_ignored_files()
 
     v.vm.provider "docker" do |d|
-      d.vagrant_machine = "zg-docker-host"
+      d.vagrant_machine = ENV["DOCKER_HOST_VAGRANT_NAME"]
       d.vagrant_vagrantfile = ENV["DOCKER_HOST_VAGRANT_FILE"]
       d.build_dir = "."
       d.build_args = ['--tag="<%= dockerTag %>"']
