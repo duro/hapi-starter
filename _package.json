@@ -1,12 +1,12 @@
 {
-  "name": "zg-site",
-  "version": "1.0.0",
-  "description": "The front-end website for ZehnerGroup",
+  "name": "<%= _.slugify(appname) %>",
+  "version": "<%= version %>",
+  "description": "<%= description %>",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
   },
-  "author": "ZehnerGroup",
+  "author": "<%= author %>",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^9.0.3",
