@@ -6,6 +6,13 @@
   "scripts": {
     "test": "npm test"
   },
+  "templates": {
+    "_package.json" : "package.json",
+    "_config.js"    : "config.js",
+    "_Dockerfile"   : "Dockerfile",
+    "_Vagrantfile"  : "Vagrantfile",
+    "bin/_dev.sh"   : "bin/dev.sh"
+  },
   "author": "<%= author %>",
   "license": "ISC",
   "devDependencies": {

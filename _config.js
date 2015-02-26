@@ -37,7 +37,7 @@ var config = {
     }]
   },
 
-  <% if useMongo -%>
+  <% if(useMongo) { %>
   database: {
     mongodb: {
       database: {
@@ -53,7 +53,7 @@ var config = {
       ]
     }
   },
-  <% endif -%>
+  <% } %>
 
 }
 

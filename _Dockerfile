@@ -1,4 +1,4 @@
-FROM node:0.10.36
+FROM node:<%= nodeVersion %>
 
 ## set some ENV vars
 ENV HOME /root
