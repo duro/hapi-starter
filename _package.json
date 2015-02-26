@@ -1,7 +1,7 @@
 {
   "name": "<%= _.slugify(appname) %>",
   "version": "<%= version %>",
-  "description": "<%= description %>",
+  "description": "<%= appDescription %>",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
