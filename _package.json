@@ -8,10 +8,11 @@
   },
   "templates": {
     "_package.json" : "package.json",
-    "_config.js"    : "config.js",
-    "_Dockerfile"   : "Dockerfile",
-    "_Vagrantfile"  : "Vagrantfile",
-    "bin/_dev.sh"   : "bin/dev.sh"
+    "_config.js" : "config.js",
+    "_Dockerfile" : "Dockerfile",
+    "_Vagrantfile" : "Vagrantfile",
+    "docker/_Dockerhost" : "docker/Dockerhost",
+    "bin/_dev.sh" : "bin/dev.sh"
   },
   "author": "<%= author %>",
   "license": "ISC",
