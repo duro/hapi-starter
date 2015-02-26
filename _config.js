@@ -17,7 +17,7 @@ var config = {
 
   api: {
     basepath: 'http://docker.local:<%= appPort %>',
-    title: '<%= _.slugify(appname) %>',
+    title: '<%= _.slugify(appName) %>',
     description: '<%= appDescription %>'
   },
 
@@ -42,8 +42,8 @@ var config = {
     mongodb: {
       database: {
         $filter: 'env',
-        test: '<%= _.slugify(appname) %>-test',
-        $default: '<%= _.slugify(appname) %>'
+        test: '<%= _.slugify(appName) %>-test',
+        $default: '<%= _.slugify(appName) %>'
       },
       hosts: [
         {

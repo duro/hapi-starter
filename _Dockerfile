@@ -30,7 +30,7 @@ RUN cd /tmp/app/ && npm install
 RUN mkdir -p /var/log/zg-site
 
 # forward request and error logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/<%= _.slugify(appname) %>/<%= _.slugify(appname) %>.log
+RUN ln -sf /dev/stdout /var/log/<%= _.slugify(appName) %>/<%= _.slugify(appName) %>.log
 
 # add our app files
 RUN mkdir -p $PROJECT_ROOT

@@ -1,5 +1,5 @@
 {
-  "name": "<%= _.slugify(appname) %>",
+  "name": "<%= _.slugify(appName) %>",
   "version": "<%= version %>",
   "description": "<%= appDescription %>",
   "main": "index.js",
